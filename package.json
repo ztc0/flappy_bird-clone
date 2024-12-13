@@ -1,0 +1,36 @@
+{
+	"name": "flappy_bird-clone",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"license": "GPL-3.0-only",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "standard --fix",
+		"format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\""
+	},
+	"dependencies": {
+		"phaser": "3.87.0"
+	},
+	"devDependencies": {
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-prettier": "5.2.1",
+		"prettier": "3.4.2",
+		"standard": "17.1.2",
+		"vite": "6.0.1"
+	},
+	"eslintConfig": {
+		"extends": [
+			"./node_modules/standard/eslintrc.json",
+			"prettier"
+		],
+		"plugins": [
+			"prettier"
+		],
+		"rules": {
+			"prettier/prettier": "error"
+		}
+	}
+}

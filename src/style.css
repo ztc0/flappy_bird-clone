@@ -1,0 +1,64 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #020201;
+  color: #fff;
+}
+
+#game-container {
+  height: 403px;
+  width: 288px;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 3px -3px 20px #049cd875;
+  
+
+}
