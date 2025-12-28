@@ -26,7 +26,6 @@ class WaitingRoom extends Scene {
 	}
 
 	create() {
-		this.scene.start('PlayScene')
 		this.background = new Background(this)
 		this.background.create()
 
@@ -46,8 +45,8 @@ class WaitingRoom extends Scene {
 		this.cameras.main.fadeIn(1000)
 		this.dieEffect = this.sound.add('dieEffect')
 
-		this.input.keyboard.once('keydown-SPACE', () => this.hadelEffectCamera())
-		this.input.on('pointerdown', () => this.hadelEffectCamera())
+		this.input.keyboard.once('keydown-SPACE', () => this.handleEffectCamera())
+		this.input.on('pointerdown', () => this.handleEffectCamera())
 	}
 
 	update() {
@@ -55,7 +54,7 @@ class WaitingRoom extends Scene {
 		this.player.idle()
 	}
 
-	hadelEffectCamera() {
+	handleEffectCamera() {
 		this.dieEffect.play()
 		this.cameras.main.fadeOut(1000, 0, 0, 0, (_camera, progress) => {
 			if (progress === 1) this.scene.start('PlayScene')

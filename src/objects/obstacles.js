@@ -23,7 +23,7 @@ class Obstacles {
 		const obstacleHeight = Math.Between(minHeight, maxHeight)
 
 		const topObstacle = this.obstaclesGroup.create(width + 52, obstacleHeight - gap, 'pipeGreen')
-		const bottomObstacle = this.obstaclesGroup.create(width, obstacleHeight + gap, 'pipeGreen')
+		const bottomObstacle = this.obstaclesGroup.create(width + 52, obstacleHeight + gap, 'pipeGreen')
 
 		topObstacle.setOrigin(0, 0)
 		bottomObstacle.setOrigin(0, 0)
