@@ -1,4 +1,4 @@
-import { Math } from 'phaser'
+import { Math as PhaserMath } from 'phaser'
 
 class Obstacles {
 	constructor(scene) {
@@ -16,12 +16,11 @@ class Obstacles {
 	addObstacle() {
 		const gap = 100
 		const { width, height } = this.scene.sys.game.config
-		const pipeHeight = 320
 		const minY = 60
 		const maxY = height - gap - 100
 		const velocity = -120
 
-		const gapY = Math.Between(minY, maxY)
+		const gapY = PhaserMath.Between(minY, maxY)
 
 		const topObstacle = this.obstaclesGroup.create(width + 52, gapY - gap / 2, 'pipeGreen')
 		const bottomObstacle = this.obstaclesGroup.create(width + 52, gapY + gap / 2, 'pipeGreen')
@@ -47,7 +46,7 @@ class Obstacles {
 	}
 
 	update() {
-		this.obstaclesGroup.children.iterate(obstacle => {
+		this.obstaclesGroup.children.iterate((obstacle) => {
 			if (obstacle && obstacle.x < -obstacle.width) {
 				obstacle.destroy()
 			}

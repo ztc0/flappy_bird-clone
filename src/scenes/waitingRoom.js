@@ -1,6 +1,6 @@
 import { Scene } from 'phaser'
-import Background from '../objects/background'
 import Player from '../entity/player'
+import Background from '../objects/background'
 
 class WaitingRoom extends Scene {
 	constructor() {
