@@ -1,6 +1,6 @@
 import { Scene } from 'phaser'
-import Background from '../objects/background'
 import Player from '../entity/player'
+import Background from '../objects/background'
 import Obstacles from '../objects/obstacles'
 
 class PlayScene extends Scene {
@@ -31,12 +31,18 @@ class PlayScene extends Scene {
 
 		this.obstacles = new Obstacles(this)
 
-		this.physics.add.collider(this.player, this.obstacles.obstaclesGroup, this.handleGameOver, null, this)
+		this.physics.add.collider(
+			this.player,
+			this.obstacles.obstaclesGroup,
+			this.handleGameOver,
+			null,
+			this,
+		)
 	}
 
 	update() {
 		if (this.cursors.space.isDown) this.player.jump()
-		if (this.player.y > 344) this.handleGameOver()
+		if (this.player.y > 344 || this.player.y < 0) this.handleGameOver()
 
 		this.background.update()
 		this.obstacles.update()
@@ -60,7 +66,7 @@ class PlayScene extends Scene {
 		this.scene.pause()
 	}
 
-	handleSpacePress = event => {
+	handleSpacePress = (event) => {
 		if (event.key === ' ') {
 			this.restartGame()
 			document.removeEventListener('keydown', this.handleSpacePress)
