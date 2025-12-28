@@ -36,7 +36,7 @@ class PlayScene extends Scene {
 
 	update() {
 		if (this.cursors.space.isDown) this.player.jump()
-		if (this.player.y > 344) this.handleGameOver()
+		if (this.player.y > 344 || this.player.y < 0) this.handleGameOver()
 
 		this.background.update()
 		this.obstacles.update()

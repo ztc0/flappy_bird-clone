@@ -14,21 +14,22 @@ class Obstacles {
 	}
 
 	addObstacle() {
-		const gap = 40
+		const gap = 100
 		const { width, height } = this.scene.sys.game.config
-		const minHeight = 149
-		const maxHeight = height - gap - 50
+		const pipeHeight = 320
+		const minY = 60
+		const maxY = height - gap - 100
 		const velocity = -120
 
-		const obstacleHeight = Math.Between(minHeight, maxHeight)
+		const gapY = Math.Between(minY, maxY)
 
-		const topObstacle = this.obstaclesGroup.create(width + 52, obstacleHeight - gap, 'pipeGreen')
-		const bottomObstacle = this.obstaclesGroup.create(width + 52, obstacleHeight + gap, 'pipeGreen')
+		const topObstacle = this.obstaclesGroup.create(width + 52, gapY - gap / 2, 'pipeGreen')
+		const bottomObstacle = this.obstaclesGroup.create(width + 52, gapY + gap / 2, 'pipeGreen')
 
-		topObstacle.setOrigin(0, 0)
-		bottomObstacle.setOrigin(0, 0)
+		topObstacle.setOrigin(0.5, 1)
+		bottomObstacle.setOrigin(0.5, 0)
 
-		topObstacle.angle = 180
+		topObstacle.setFlipY(true)
 
 		this.obstaclesGroup.setVelocityX(velocity)
 
